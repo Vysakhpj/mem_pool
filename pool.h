@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 typedef struct node
 {
     struct node *next;
@@ -7,6 +9,8 @@ typedef struct   {
 
     node_t* head;
     node_t* blocks;
+    int block_size;
+    int block_count;
     int depth;  
 }pool_t;
 
@@ -14,4 +18,5 @@ void init(pool_t *pool,int ,int );
 void* get(pool_t *);
 void put(pool_t *, void *);
 void de_init(pool_t *);
+int blockalloc(pool_t* ,int ,int ); 
  
