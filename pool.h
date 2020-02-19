@@ -6,17 +6,16 @@ typedef struct node
 }node_t;
 
 typedef struct   {
-
+    int block_count;
     node_t* head;
     node_t* blocks;
+    node_t* free_address;
+    node_t* used_address;
     int block_size;
-    int block_count;
     int depth;  
 }pool_t;
 
-void init(pool_t *pool,int ,int );
+int init(pool_t *pool,int ,int );
 void* get(pool_t *);
-void put(pool_t *, void *);
+void put(pool_t *);
 void de_init(pool_t *);
-int blockalloc(pool_t* ,int ,int ); 
- 
